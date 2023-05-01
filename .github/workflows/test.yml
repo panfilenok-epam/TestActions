@@ -10,16 +10,16 @@ jobs:
     environment:
       name: dev
     steps:
-      - run: echo ${{ vars.MY_ENV_VAR }}
+      - run: echo "$myenvvar"
   job2:
     runs-on: ubuntu-latest
     environment:
       name: test
     steps:
-      - run: echo ${{ vars.MY_ENV_VAR }}
+      - run: echo "$myenvvar"
   job3:
     runs-on: ubuntu-latest
     environment:
       name: prod
     steps:
-      - run: echo ${{ vars.MY_ENV_VAR }}
+      - run: echo "$myenvvar"
