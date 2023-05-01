@@ -1,0 +1,22 @@
+name: Test
+
+on:
+  workflow_dispatch:
+env:
+  myenvvar: ${{ vars.MY_ENV_VAR }}
+jobs:
+  job1:
+    environment:
+      name: dev
+    steps:
+      - run: echo ${{ vars.MY_ENV_VAR }}
+  job2:
+    environment:
+      name: test
+    steps:
+      - run: echo ${{ vars.MY_ENV_VAR }}
+  job3:
+    environment:
+      name: prod
+    steps:
+      - run: echo ${{ vars.MY_ENV_VAR }}
